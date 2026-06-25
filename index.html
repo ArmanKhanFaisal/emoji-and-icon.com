@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Emoji & Icon Hub — search, copy HTML code, copy SVG, and download icons as SVG or PNG." />
+  <title>Emoji & Icon Hub — Copy, Download & Use</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="preloader" id="preloader">
+    <div class="loader-mark">
+      <span>😀</span><span>⚡</span><span>🎯</span><span>✨</span>
+    </div>
+    <p>Loading creative assets...</p>
+  </div>
+
+  <div class="cursor-glow" id="cursorGlow"></div>
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <header class="site-header" id="siteHeader">
+    <a href="#" class="brand" aria-label="Emoji Icon Hub home">
+      <span class="brand-mark">✦</span>
+      <span>Emoji<span>Hub</span></span>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="#library">Library</a>
+      <a href="#tools">Tools</a>
+      <a href="#popular">Popular</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="header-actions">
+      <button class="ghost-btn" id="themeToggle" type="button" aria-label="Toggle theme">🌙</button>
+      <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="orb orb-one"></div>
+      <div class="orb orb-two"></div>
+      <div class="orb orb-three"></div>
+      <div class="hero-grid">
+        <div class="hero-copy reveal">
+          <span class="eyebrow">All emoji + useful icons in one place</span>
+          <h1>Copy emoji, grab HTML code, download icons.</h1>
+          <p>
+            A clean searchable library for creators, developers and marketers. Find emoji or SVG icons,
+            copy ready-to-use code, save favorites and download assets instantly.
+          </p>
+          <div class="hero-actions">
+            <a href="#library" class="primary-btn magnetic">Explore Library</a>
+            <button class="secondary-btn magnetic" type="button" id="randomAssetBtn">Surprise Me</button>
+          </div>
+          <div class="hero-stats">
+            <div><strong id="emojiCount">0</strong><span>Emojis</span></div>
+            <div><strong id="iconCount">0</strong><span>SVG Icons</span></div>
+            <div><strong>100%</strong><span>Free Static Code</span></div>
+          </div>
+        </div>
+        <div class="hero-showcase reveal">
+          <div class="floating-card card-a" data-float>😍<small>Emoji</small></div>
+          <div class="floating-card card-b" data-float>⚙️<small>HTML</small></div>
+          <div class="floating-card card-c" data-float>⬇️<small>Download</small></div>
+          <div class="preview-device tilt-card">
+            <div class="device-top"><span></span><span></span><span></span></div>
+            <div class="asset-cloud" aria-hidden="true">
+              <span>🚀</span><span>💡</span><span>🔥</span><span>🛒</span><span>🎨</span><span>📦</span><span>💻</span><span>✅</span><span>🌙</span><span>📈</span>
+            </div>
+            <div class="code-preview">
+              <p>&lt;span class="emoji"&gt;🚀&lt;/span&gt;</p>
+              <p>&lt;svg class="icon"&gt;...&lt;/svg&gt;</p>
+              <p>download: svg/png</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="tool-strip" id="tools">
+      <div class="tool-card reveal">
+        <span>⌘</span>
+        <h3>One-click Copy</h3>
+        <p>Copy emoji, HTML entity, SVG markup or icon HTML snippet.</p>
+      </div>
+      <div class="tool-card reveal">
+        <span>⬇</span>
+        <h3>Instant Download</h3>
+        <p>Download every SVG icon as SVG or PNG directly from browser.</p>
+      </div>
+      <div class="tool-card reveal">
+        <span>★</span>
+        <h3>Favorites</h3>
+        <p>Save your most-used emoji and icons locally in your browser.</p>
+      </div>
+    </section>
+
+    <section class="library" id="library">
+      <div class="section-head reveal">
+        <span class="eyebrow">Searchable asset library</span>
+        <h2>Emoji & Icon Collection</h2>
+        <p>Use the tabs, search box and categories to quickly find exactly what you need.</p>
+      </div>
+
+      <div class="control-panel reveal">
+        <div class="tabs" role="tablist" aria-label="Asset type">
+          <button class="tab active" data-type="emoji" type="button">Emoji</button>
+          <button class="tab" data-type="icon" type="button">Icons</button>
+          <button class="tab" data-type="favorites" type="button">Favorites</button>
+        </div>
+        <div class="search-box">
+          <span>⌕</span>
+          <input id="searchInput" type="search" placeholder="Search smile, heart, cart, arrow, business..." />
+        </div>
+        <button class="ghost-btn reset" id="resetBtn" type="button">Reset</button>
+      </div>
+
+      <div class="category-row reveal" id="categoryRow"></div>
+      <div class="result-meta reveal">
+        <p id="resultCount">Showing assets</p>
+        <div class="view-actions">
+          <button class="mini-btn active" data-view="grid" type="button">Grid</button>
+          <button class="mini-btn" data-view="compact" type="button">Compact</button>
+        </div>
+      </div>
+      <div class="asset-grid" id="assetGrid"></div>
+      <div class="empty-state" id="emptyState">
+        <span>🔎</span>
+        <h3>No asset found</h3>
+        <p>Try another keyword or category.</p>
+      </div>
+    </section>
+
+    <section class="popular" id="popular">
+      <div class="section-head reveal">
+        <span class="eyebrow">Quick copy pack</span>
+        <h2>Popular HTML Snippets</h2>
+      </div>
+      <div class="snippet-grid">
+        <article class="snippet-card reveal">
+          <div class="snippet-title"><span>🔥</span> Promo Badge</div>
+          <pre><code>&lt;span class="badge"&gt;🔥 Hot Deal&lt;/span&gt;</code></pre>
+          <button class="copy-snippet magnetic" data-snippet="<span class=&quot;badge&quot;>🔥 Hot Deal</span>" type="button">Copy</button>
+        </article>
+        <article class="snippet-card reveal">
+          <div class="snippet-title"><span>✅</span> Check Line</div>
+          <pre><code>&lt;p&gt;✅ Fast delivery available&lt;/p&gt;</code></pre>
+          <button class="copy-snippet magnetic" data-snippet="<p>✅ Fast delivery available</p>" type="button">Copy</button>
+        </article>
+        <article class="snippet-card reveal">
+          <div class="snippet-title"><span>⭐</span> Rating</div>
+          <pre><code>&lt;span&gt;⭐⭐⭐⭐⭐&lt;/span&gt;</code></pre>
+          <button class="copy-snippet magnetic" data-snippet="<span>⭐⭐⭐⭐⭐</span>" type="button">Copy</button>
+        </article>
+      </div>
+    </section>
+
+    <section class="faq" id="faq">
+      <div class="section-head reveal">
+        <span class="eyebrow">Questions</span>
+        <h2>FAQ</h2>
+      </div>
+      <div class="accordion reveal">
+        <button type="button" class="accordion-btn">Can I use these in HTML projects?<span>+</span></button>
+        <div class="accordion-body">Yes. Emojis can be copied as symbols or HTML entities. Icons can be copied as inline SVG or downloaded as SVG/PNG.</div>
+        <button type="button" class="accordion-btn">Does this need internet?<span>+</span></button>
+        <div class="accordion-body">No. This version is fully static and works offline after you extract the ZIP.</div>
+        <button type="button" class="accordion-btn">Can I add more emojis/icons later?<span>+</span></button>
+        <div class="accordion-body">Yes. Open <code>app.js</code> and add more items to the <code>emojis</code> or <code>icons</code> array.</div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div>
+      <a href="#" class="brand"><span class="brand-mark">✦</span><span>Emoji<span>Hub</span></span></a>
+      <p>Copy, download and use beautiful emoji and SVG icons faster.</p>
+    </div>
+    <div class="footer-links">
+      <a href="#library">Library</a>
+      <a href="#tools">Tools</a>
+      <a href="#popular">Snippets</a>
+      <a href="#faq">FAQ</a>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast">Copied</div>
+  <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">↑</button>
+
+  <script src="app.js"></script>
+</body>
+</html>
